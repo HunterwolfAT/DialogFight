@@ -172,7 +172,7 @@ public class Dialouge {
                 null,
                 null,
                 // ========= Keys
-                "Why should I believe anything you say now?",
+                "Why should I believe you now?",
                 "Well, then sorry for bothering you.",
                 null,
                 null));
@@ -182,7 +182,7 @@ public class Dialouge {
             new Stage(1, line, "Shit...",
                 // ========= Answers
                 "Let's start over... how are you feeling?",
-                "Because it-- I have always been this way.",
+                "Because it-- I've always been this way.",
                 null,
                 null,
                 // ========= Keys

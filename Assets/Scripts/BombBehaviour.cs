@@ -11,6 +11,7 @@ public class BombBehaviour : MonoBehaviour {
     private AudioSource audiosource;
     private float timer;
     public float timer_threshold = 5f;
+    private bool boom = false;
 
     // Use this for initialization
     void Start()
@@ -25,10 +26,11 @@ public class BombBehaviour : MonoBehaviour {
         //Debug.Log((timer / (timer_threshold * 100f)));
         sprite.color = new Color(sprite.color.r, 1f - (timer / (timer_threshold * 100f)), sprite.color.b);
 
-        if ((timer / (timer_threshold * 100f)) > 1f)  // BOOM!
+        if ((timer / (timer_threshold * 100f)) > 1f && !boom)  // BOOM!
         {
             // Select the line it is on
             EnterOption();
+            boom = true;
             //ExplodeAll();
         }
 	}
