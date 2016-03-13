@@ -147,7 +147,7 @@ public class TextObjectHandle {
 		return width * mesh.characterSize * 0.1f;
 	}
 
-    public void ending(bool win)
+    public void ending()
     {
         q.text = "";
         o1.text = "";

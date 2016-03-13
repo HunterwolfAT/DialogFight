@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour {
                 StageHandler.TryAdvance();
                 
                 // If the game has ended, restart it!
-                if (StageHandler.end)
+                if (StageHandler.end && StageHandler.win == false )
                 {
                     StageHandler.Init(introtextmesh);
                     Application.LoadLevel(0);

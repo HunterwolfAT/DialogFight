@@ -9,7 +9,7 @@ public static class StageHandler {
     private static TextMesh introtext;
 
 	public static Stage currentStage = null;
-    public static bool end = false;
+    public static bool end = false, win = false;
 
 	public static void Init(TextMesh itext) {
 		dialouge = new Dialouge ();
@@ -89,8 +89,16 @@ public static class StageHandler {
         {
             Debug.Log("THE END.");
             introtext.text = "That could have gone better... (Retry)";
-            objecthandler.ending(false);
+            objecthandler.ending();
             end = true;
+        }
+        else if (currentStage.question == "")
+        {
+            Debug.Log("YOU WIN! THE END!");
+            introtext.text = "Thank you for playing!\n\nDialog_Fight\nby Maximilian Siess, 2016\n\nFirst game for #1gam";
+            objecthandler.ending();
+            end = true;
+            win = true;
         }
     }
 }

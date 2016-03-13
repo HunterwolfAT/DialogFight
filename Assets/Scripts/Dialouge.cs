@@ -14,12 +14,12 @@ public class Dialouge {
 			// ========= Answers
 			"Hey.", 
 			"(Hang up.)",
-			null, 
+			"Shut up let's make out.", 
 			null, 
 			// ========= Keys
 			"We need to talk.", 
 			"The call has ended.", 
-			null, 
+			"", // WIN!
 			null));
 
         line = "The call has ended.";
@@ -742,10 +742,10 @@ public class Dialouge {
                 null,
                 null));
 
-        // TEMPLATE STAGE
+        // TEMPLATE STAGE....... Also the WIN stage
         line = "";
         stages.Add(line,
-            new Stage(1, line, "",
+            new Stage(0, line, "",
                 // ========= Answers
                 null,
                 null,
