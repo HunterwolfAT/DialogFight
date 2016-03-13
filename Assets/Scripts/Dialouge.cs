@@ -563,7 +563,7 @@ public class Dialouge {
             new Stage(1, line, "We all made mistakes.",
                 // ========= Answers
                 "Thank you.",
-                "I understand. This is not the first time.",
+                "I understand. It's not the first time.",
                 null,
                 null,
                 // ========= Keys
@@ -642,7 +642,7 @@ public class Dialouge {
                 //"I don't think I will.",
                 // ========= Keys
                 "...I always liked how you were.",
-                "First you make me ask, then you get pissy.",
+                "First you make me ask...",
                 null,
                 null));
 
@@ -804,7 +804,7 @@ public class Dialouge {
 
         line = "...";
         stages.Add(line,
-            new Stage(0, line, "I missed you for a long while after.",
+            new Stage(0, line, "I missed you for a long time afterwards.",
                 // ========= Answers
                 null,
                 null,
