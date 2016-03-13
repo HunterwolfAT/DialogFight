@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour {
     public Sprite phone_end_sprite;
 	public TextMesh introtextmesh;
 
-    public AudioClip ConfirmOption, GetHit;
+    public AudioClip ConfirmOption, GetHit, Voice, PhoneVoice;
 
 	private Rigidbody2D body;
     //private StageHandler stagehandler;
@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour {
 		body = gameObject.GetComponent<Rigidbody2D>();
 		heart_spriterenderer = GetComponent<SpriteRenderer>();
         audiosource = GetComponent<AudioSource>();
-		StageHandler.Init (introtextmesh);
+		StageHandler.Init (introtextmesh, audiosource, PhoneVoice, Voice);
 		//BulletHell.gamestate = 1;	//TODO: Testing only!
 	}
 
@@ -43,7 +43,15 @@ public class PlayerMove : MonoBehaviour {
 
 		// OTHER CONTROLS
 		if (Input.GetButtonUp("Submit")) {
-			if (selectedOption != null) {
+
+            // If the game has ended, restart it!
+            if (StageHandler.end && StageHandler.win == false)
+            {
+                StageHandler.Init(introtextmesh, audiosource, PhoneVoice, Voice);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            }
+
+            if (selectedOption != null) {
                 if (selectedOption.CompareTag("Option") || selectedOption.CompareTag("Phone"))
                 {
                     EnterOption();
@@ -51,15 +59,8 @@ public class PlayerMove : MonoBehaviour {
 			} else
             {
                 StageHandler.TryAdvance();
-                
-                // If the game has ended, restart it!
-                if (StageHandler.end && StageHandler.win == false )
-                {
-                    StageHandler.Init(introtextmesh);
-                    UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-                }
             }
-		}
+        }
 			
 		if (intro) {
 			PlayIntro ();
@@ -124,8 +125,12 @@ public class PlayerMove : MonoBehaviour {
 			phone_animator.applyRootMotion = true;
 			introstage++;
 		} else { // Hit an Option!
-            Debug.Log("Clang!");
-            audiosource.PlayOneShot(ConfirmOption, 1f); // Play SoundEffect
+
+            // DIRTY HACK ALERT
+            if (selectedOption.tag != "Phone")
+                audiosource.PlayOneShot(ConfirmOption, 1f); // Play SoundEffect
+            // DIRTY HACK ALERT OVER
+
             Instantiate(option_feedback, new Vector3(0f,0.22f - ((selectedOption.layer - 8) * 0.29f), 0f), Quaternion.identity);
 			StageHandler.NextStage (selectedOption.layer - 7);	// Usable layes start at 8
 		}
