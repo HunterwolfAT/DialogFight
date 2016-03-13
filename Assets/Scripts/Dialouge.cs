@@ -14,13 +14,14 @@ public class Dialouge {
 			// ========= Answers
 			"Hey.", 
 			"(Hang up.)",
-			"Shut up let's make out.", 
+			null,
 			null, 
 			// ========= Keys
 			"We need to talk.", 
 			"The call has ended.", 
-			"", // WIN!
-			null));
+			//"", // WIN!
+			null,
+            null));
 
         line = "The call has ended.";
         stages.Add(line,
