@@ -14,13 +14,14 @@ public class Dialouge {
 			// ========= Answers
 			"Hey.", 
 			"(Hang up.)",
-			null, 
+			null,
 			null, 
 			// ========= Keys
 			"We need to talk.", 
 			"The call has ended.", 
-			null, 
-			null));
+			//"", // WIN!
+			null,
+            null));
 
         line = "The call has ended.";
         stages.Add(line,
@@ -61,7 +62,7 @@ public class Dialouge {
                 // ========= Keys
                 "No it hasn't.",
                 "It matters to me!",
-                "What? Do you think this is some kind of game?",
+                "What? Do you think this is a game?",
                 null));
 
         line = "No it hasn't.";
@@ -74,7 +75,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "Tell me why you did this.",
-                "The call was ended.",
+                "The call has ended.",
                 "Tell me why you did this.",
                 null));
 
@@ -89,7 +90,7 @@ public class Dialouge {
                 // ========= Keys
                 "Okay. Here is your chance then.",
                 "I tried understanding. Fuck you.",
-                "The call was ended.",
+                "The call has ended.",
                 null));
 
         line = "I tried understanding. Fuck you.";
@@ -101,7 +102,7 @@ public class Dialouge {
                 null,
                 null,
                 // ========= Keys
-                "The call was ended.",
+                "The call has ended.",
                 null,
                 null,
                 null));
@@ -120,7 +121,7 @@ public class Dialouge {
                 null,
                 null));
 
-        line = "What? Do you think this is some kind of game?";
+        line = "What? Do you think this is a game?";
         stages.Add(line,
             new Stage(1, line, "Nothing has been more serious.",
                 // ========= Answers
@@ -131,7 +132,7 @@ public class Dialouge {
                 // ========= Keys
                 "Okay. Here is your chance then.",
                 "I tried understanding. Fuck you.",
-                "The call was ended.",
+                "The call has ended.",
                 null));
 
         line = "I deserve answers.";
@@ -144,7 +145,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "Don't tell me what I deserve.",
-                "What? Do you think this is some kind of game?",
+                "What? Do you think this is a game?",
                 null,
                 null));
 
@@ -742,10 +743,10 @@ public class Dialouge {
                 null,
                 null));
 
-        // TEMPLATE STAGE
+        // TEMPLATE STAGE....... Also the WIN stage
         line = "";
         stages.Add(line,
-            new Stage(1, line, "",
+            new Stage(0, line, "",
                 // ========= Answers
                 null,
                 null,
