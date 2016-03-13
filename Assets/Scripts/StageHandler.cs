@@ -58,7 +58,7 @@ public static class StageHandler {
 			break;
 		}
 
-		if (currentStage.newGamestate > 0) {
+		if (currentStage.newGamestate >= 0) {
 			BulletHell.gamestate = currentStage.newGamestate;
 		}
 

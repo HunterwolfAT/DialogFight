@@ -74,7 +74,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "Tell me why you did this.",
-                "The call was ended.",
+                "The call has ended.",
                 "Tell me why you did this.",
                 null));
 
@@ -89,7 +89,7 @@ public class Dialouge {
                 // ========= Keys
                 "Okay. Here is your chance then.",
                 "I tried understanding. Fuck you.",
-                "The call was ended.",
+                "The call has ended.",
                 null));
 
         line = "I tried understanding. Fuck you.";
@@ -101,7 +101,7 @@ public class Dialouge {
                 null,
                 null,
                 // ========= Keys
-                "The call was ended.",
+                "The call has ended.",
                 null,
                 null,
                 null));
@@ -131,7 +131,7 @@ public class Dialouge {
                 // ========= Keys
                 "Okay. Here is your chance then.",
                 "I tried understanding. Fuck you.",
-                "The call was ended.",
+                "The call has ended.",
                 null));
 
         line = "I deserve answers.";
