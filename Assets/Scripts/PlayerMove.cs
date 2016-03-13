@@ -14,8 +14,11 @@ public class PlayerMove : MonoBehaviour {
     public Sprite phone_end_sprite;
 	public TextMesh introtextmesh;
 
+    public AudioClip ConfirmOption, GetHit, Voice, PhoneVoice, Woosh;
+
 	private Rigidbody2D body;
-	//private StageHandler stagehandler;
+    //private StageHandler stagehandler;
+    private AudioSource audiosource;
 	private GameObject selectedOption = null;
 	private int horizontal, vertical = 0;
 	private float introfade = 0f, fadespeed = 1f;
@@ -24,7 +27,8 @@ public class PlayerMove : MonoBehaviour {
 	void Start () {
 		body = gameObject.GetComponent<Rigidbody2D>();
 		heart_spriterenderer = GetComponent<SpriteRenderer>();
-		StageHandler.Init (introtextmesh);
+        audiosource = GetComponent<AudioSource>();
+		StageHandler.Init (introtextmesh, audiosource, PhoneVoice, Voice);
 		//BulletHell.gamestate = 1;	//TODO: Testing only!
 	}
 
@@ -39,7 +43,15 @@ public class PlayerMove : MonoBehaviour {
 
 		// OTHER CONTROLS
 		if (Input.GetButtonUp("Submit")) {
-			if (selectedOption != null) {
+
+            // If the game has ended, restart it!
+            if (StageHandler.end && StageHandler.win == false)
+            {
+                StageHandler.Init(introtextmesh, audiosource, PhoneVoice, Voice);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            }
+
+            if (selectedOption != null) {
                 if (selectedOption.CompareTag("Option") || selectedOption.CompareTag("Phone"))
                 {
                     EnterOption();
@@ -47,15 +59,8 @@ public class PlayerMove : MonoBehaviour {
 			} else
             {
                 StageHandler.TryAdvance();
-                
-                // If the game has ended, restart it!
-                if (StageHandler.end && StageHandler.win == false )
-                {
-                    StageHandler.Init(introtextmesh);
-                    Application.LoadLevel(0);
-                }
             }
-		}
+        }
 			
 		if (intro) {
 			PlayIntro ();
@@ -81,6 +86,7 @@ public class PlayerMove : MonoBehaviour {
 				selectedOption = coll.gameObject;
 				// Option to select
 				if (selectedOption.CompareTag ("Option")) {
+                    audiosource.PlayOneShot(Voice);
 					TextMesh textmesh = selectedOption.GetComponent<TextMesh> ();
 					textmesh.color = Color.yellow;
 				}
@@ -90,6 +96,9 @@ public class PlayerMove : MonoBehaviour {
 		if (coll.gameObject.CompareTag ("Bullet")) {
 			// Move the player
 			transform.position = new Vector3 (transform.position.x + Random.Range(0.2f, 0.8f), transform.position.y - Random.Range(0.2f, 0.8f), 0);
+
+            // Play SoundEffect
+            audiosource.PlayOneShot(GetHit, 1f);
 
 			// Check if player is out of bounds
 			if (transform.position.y < -0.6) {
@@ -113,11 +122,17 @@ public class PlayerMove : MonoBehaviour {
 
 	private void EnterOption() {
         if (intro && selectedOption.tag == "Phone" && introstage == 4) { // Hit the phone in the intro
+            audiosource.PlayOneShot(PhoneVoice);
 			phone_spriterenderer.sprite = phone_call_sprite;
 			phone_animator.applyRootMotion = true;
 			introstage++;
 		} else { // Hit an Option!
-            Debug.Log("Clang!");
+
+            // DIRTY HACK ALERT
+            if (selectedOption.tag != "Phone")
+                audiosource.PlayOneShot(ConfirmOption, 0.6f); // Play SoundEffect
+            // DIRTY HACK ALERT OVER
+
             Instantiate(option_feedback, new Vector3(0f,0.22f - ((selectedOption.layer - 8) * 0.29f), 0f), Quaternion.identity);
 			StageHandler.NextStage (selectedOption.layer - 7);	// Usable layes start at 8
 		}
@@ -132,7 +147,8 @@ public class PlayerMove : MonoBehaviour {
 			} else {
 				introfade = 0f;
 				introstage++;
-			}
+                audiosource.Play();
+            }
 			break;
 		case 2: // Fade the Phone in
 			if (introfade < 1f) {
@@ -153,12 +169,13 @@ public class PlayerMove : MonoBehaviour {
 			}
 			break;
 		case 5: // No 4! 4 is waiting for the phone to be answered. Moves the Phone to the bottom left corner
-			Vector3 target_phone_vector = new Vector3 (-2.981f, 0.635f, 0f);
+            audiosource.Stop();
+            Vector3 target_phone_vector = new Vector3 (-2.981f, 0.635f, 0f);
 			if (phone_spriterenderer.transform.position != target_phone_vector || introfade < 1f) {
 				phone_spriterenderer.transform.position = Vector3.MoveTowards (phone_spriterenderer.transform.position, target_phone_vector, 2f * Time.deltaTime);
 				introtextmesh.color = new Vector4 (1, 1, 1, 1 - introfade);
 				introfade += fadespeed * Time.deltaTime;
-			} else {
+			} else {   
 				introfade = 0f;
 				introstage++;
 			}

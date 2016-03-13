@@ -10,9 +10,11 @@ public class TextObjectHandle {
 	private int counter;
 	private bool doneq, done1, done2, done3, done4, doneiv = true;
 	public float timer = 0f, threshold = .1f, speed = 3f;
+    private AudioSource audiosource;
+    public AudioClip phonevoice, voice;
 
 	// Use this for initialization
-	public void Init () {
+	public void Init (AudioSource Source, AudioClip PhoneVoice, AudioClip Voice) {
 		question = GameObject.Find ("Partner_Speech");
 		option1 = GameObject.Find ("Option1");
 		option2 = GameObject.Find ("Option2");
@@ -29,6 +31,9 @@ public class TextObjectHandle {
 		bo2 = option2.GetComponent<BoxCollider2D>();
 		bo3 = option3.GetComponent<BoxCollider2D>();
 		bo4 = option4.GetComponent<BoxCollider2D>();
+        audiosource = Source;
+        phonevoice = PhoneVoice;
+        voice = Voice;
 	}
 
 	// Give new text to draw
@@ -81,6 +86,7 @@ public class TextObjectHandle {
 					doneq = true;
 					counter = 0;
 				} else {
+                    audiosource.PlayOneShot(phonevoice);
 					q.text = fullq.Substring (0, counter);
 				}
 			} else if (!done1) {
@@ -88,7 +94,8 @@ public class TextObjectHandle {
 					done1 = true;
 					counter = 0;
 				} else {
-					o1.text = fullo1.Substring (0, counter);
+                    audiosource.PlayOneShot(voice, 0.8f);
+                    o1.text = fullo1.Substring (0, counter);
 					updateBox(bo1, o1); // Refit collider to new size
 				}
 			} else if (!done2) {
@@ -96,7 +103,8 @@ public class TextObjectHandle {
 					done2 = true;
 					counter = 0;
 				} else {
-					o2.text = fullo2.Substring (0, counter);
+                    audiosource.PlayOneShot(voice, 0.8f);
+                    o2.text = fullo2.Substring (0, counter);
 					updateBox(bo2, o2); // Refit collider to new size
 				}
 			} else if (!done3) {
@@ -104,7 +112,8 @@ public class TextObjectHandle {
 					done3 = true;
 					counter = 0;
 				} else {
-					o3.text = fullo3.Substring (0, counter);
+                    audiosource.PlayOneShot(voice, 0.8f);
+                    o3.text = fullo3.Substring (0, counter);
 					updateBox(bo3, o3); // Refit collider to new size
 				}
 			} else if (!done4) {
@@ -112,7 +121,8 @@ public class TextObjectHandle {
 					done4 = true;
 					counter = 0;
 				} else {
-					o4.text = fullo4.Substring (0, counter);
+                    audiosource.PlayOneShot(voice, 0.8f);
+                    o4.text = fullo4.Substring (0, counter);
 					updateBox(bo4, o4); // Refit collider to new size
 				}
 			} else if (!doneiv) {
@@ -120,7 +130,8 @@ public class TextObjectHandle {
 					doneiv = true;
 					counter = 0;
 				} else {
-					iv.text = fulliv.Substring (0, counter);
+                    audiosource.PlayOneShot(voice, 0.5f);
+                    iv.text = fulliv.Substring (0, counter);
 				}
 			}
 			counter++;

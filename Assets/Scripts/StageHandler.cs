@@ -11,11 +11,11 @@ public static class StageHandler {
 	public static Stage currentStage = null;
     public static bool end = false, win = false;
 
-	public static void Init(TextMesh itext) {
+	public static void Init(TextMesh itext, AudioSource audiosource, AudioClip phonevoice, AudioClip voice) {
 		dialouge = new Dialouge ();
 		currentStage = dialouge.stages ["Start"];
 
-		objecthandler.Init ();
+		objecthandler.Init (audiosource, phonevoice, voice);
 		UpdateText ();
         introtext = itext;
         end = false;
