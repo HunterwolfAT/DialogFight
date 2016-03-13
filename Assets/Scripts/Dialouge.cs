@@ -571,174 +571,259 @@ public class Dialouge {
 		        "I.. I want to apologize.",
                 null,
                 null));
-/*
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
 
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-
-        line = "";
-        stages.Add(line,
-            new Stage(1, line, "",
-                // ========= Answers
-                null,
-                null,
-                null,
-                null,
-                // ========= Keys
-                null,
-                null,
-                null,
-                null));
-                */
-
-	// ======================================== ACT 3
+        // ======================================== ACT 3
 
         line = "I.. I want to apologize.";
         stages.Add(line,
-            new Stage(1, line, "...thank you.",
+            new Stage(1, line, "Now we are on the same page.",
+                // ========= Answers
+                "I'm sorry too.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Are you really happier this way?",
+                null,
+                null,
+                null));
+
+        line = "Are you really happier this way?";
+        stages.Add(line,
+            new Stage(1, line, "The time with you was great too.",
+                // ========= Answers
+                "I'm better. I needed it.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "That's good, I guess.",
+                null,
+                null,
+                null));
+
+        line = "That's good, I guess.";
+        stages.Add(line,
+            new Stage(1, line, "It is.", // 1 is intentional!
                 // ========= Answers
                 null,
                 null,
                 null,
                 null,
                 // ========= Keys
+                "...Are you... all..?",
                 null,
+                null,
+                null));
+
+        line = "...Are you... all..?";
+        stages.Add(line,
+            new Stage(1, line, "Oh god, no.",
+                // ========= Answers
+                "What do you mean?",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "You know. Did you get surgery?",
+                null,
+                null,
+                null));
+
+        line = "You know. Did you get surgery?";
+        stages.Add(line,
+            new Stage(1, line, "I'm still sorry, but that is not your business.",
+                // ========= Answers
+                null,
+                "Why does it matter to you.",
+                null,
+                null,
+                // ========= Keys
+                null,
+                "First you make me ask, then you get pissy.",
+                null,
+                null));
+
+        line = "First you make me ask...";
+        stages.Add(line,
+            new Stage(1, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "...then you get pissy.",
+                null,
+                null,
+                null));
+
+        line = "...then you get pissy.";
+        stages.Add(line,
+            new Stage(1, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Urgh, I don't want to deal with this.",
+                null,
+                null,
+                null));
+
+        line = "Urgh, I don't want to deal with this.";
+        stages.Add(line,
+            new Stage(1, line, "Sure, make it about you.",
+                // ========= Answers
+                null,
+                "Look, I'm sorry. It's a touchy subject.",
+                null,
+                null,
+                // ========= Keys
+                null,
+                "Okay. Damn.",
+                null,
+                null));
+
+        line = "Okay. Damn.";
+        stages.Add(line,
+            new Stage(1, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "So, it has nothing to do with me?",
+                null,
+                null,
+                null));
+
+        // =============================================== ACT 4
+
+        line = "So, it has nothing to do with me?";
+        stages.Add(line,
+            new Stage(1, line, "I'm sorry you had to think that.",
+                // ========= Answers
+                "Yeah. Don't worry.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "I still liked you.",
+                null,
+                null,
+                null));
+
+        line = "I still liked you.";
+        stages.Add(line,
+            new Stage(1, line, "I'm glad.",
+                // ========= Answers
+                "I still like you too.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "...",
+                null,
+                null,
+                null));
+
+        line = "...";
+        stages.Add(line,
+            new Stage(0, line, "I missed you for a long while after.",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "I don't know. This is weird.",
+                null,
+                null,
+                null));
+
+        line = "I don't know. This is weird.";
+        stages.Add(line,
+            new Stage(0, line, "Awkward.",
+                // ========= Answers
+                "I'm sorry.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "I am the sorry one.",
+                null,
+                null,
+                null));
+
+        line = "I am the sorry one.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "It seemed like you're doing well.",
+                null,
+                null,
+                null));
+
+        line = "It seemed like you're doing well.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "I'm glad.",
+                null,
+                null,
+                null));
+
+        line = "I'm glad.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "...I think I should go now.",
+                null,
+                null,
+                null));
+
+        line = "...I think I should go now.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Take care. And see you around.",
+                null,
+                null,
+                null));
+
+        line = "Take care. And see you around.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "",
                 null,
                 null,
                 null));
