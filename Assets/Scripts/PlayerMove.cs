@@ -14,8 +14,11 @@ public class PlayerMove : MonoBehaviour {
     public Sprite phone_end_sprite;
 	public TextMesh introtextmesh;
 
+    public AudioClip ConfirmOption, GetHit;
+
 	private Rigidbody2D body;
-	//private StageHandler stagehandler;
+    //private StageHandler stagehandler;
+    private AudioSource audiosource;
 	private GameObject selectedOption = null;
 	private int horizontal, vertical = 0;
 	private float introfade = 0f, fadespeed = 1f;
@@ -24,6 +27,7 @@ public class PlayerMove : MonoBehaviour {
 	void Start () {
 		body = gameObject.GetComponent<Rigidbody2D>();
 		heart_spriterenderer = GetComponent<SpriteRenderer>();
+        audiosource = GetComponent<AudioSource>();
 		StageHandler.Init (introtextmesh);
 		//BulletHell.gamestate = 1;	//TODO: Testing only!
 	}
@@ -52,7 +56,7 @@ public class PlayerMove : MonoBehaviour {
                 if (StageHandler.end && StageHandler.win == false )
                 {
                     StageHandler.Init(introtextmesh);
-                    Application.LoadLevel(0);
+                    UnityEngine.SceneManagement.SceneManager.LoadScene(0);
                 }
             }
 		}
@@ -91,6 +95,9 @@ public class PlayerMove : MonoBehaviour {
 			// Move the player
 			transform.position = new Vector3 (transform.position.x + Random.Range(0.2f, 0.8f), transform.position.y - Random.Range(0.2f, 0.8f), 0);
 
+            // Play SoundEffect
+            audiosource.PlayOneShot(GetHit, 1f);
+
 			// Check if player is out of bounds
 			if (transform.position.y < -0.6) {
 				transform.position = new Vector3 (transform.position.x, -0.6f, 0f);
@@ -118,6 +125,7 @@ public class PlayerMove : MonoBehaviour {
 			introstage++;
 		} else { // Hit an Option!
             Debug.Log("Clang!");
+            audiosource.PlayOneShot(ConfirmOption, 1f); // Play SoundEffect
             Instantiate(option_feedback, new Vector3(0f,0.22f - ((selectedOption.layer - 8) * 0.29f), 0f), Quaternion.identity);
 			StageHandler.NextStage (selectedOption.layer - 7);	// Usable layes start at 8
 		}

@@ -3,21 +3,21 @@ using System.Collections;
 
 public class BombBehaviour : MonoBehaviour {
 
-    private ConstantForce2D force;
-    private Rigidbody2D body;
     private SpriteRenderer sprite;
     private GameObject selectedOption;
     public SpriteRenderer explosion;
     public GameObject option_feedback;
+    public AudioClip wrongOption;
+    private AudioSource audiosource;
     private float timer;
     public float timer_threshold = 5f;
 
-	// Use this for initialization
-	void Start () {
-        force = GetComponent<ConstantForce2D>();
-        body = GetComponent<Rigidbody2D>();
+    // Use this for initialization
+    void Start()
+    {
         sprite = GetComponent<SpriteRenderer>();
-	}
+        audiosource = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -76,6 +76,7 @@ public class BombBehaviour : MonoBehaviour {
     void EnterOption()
     {
         GameObject feedback = (GameObject) Instantiate(option_feedback, new Vector3(0f, 0.22f - ((selectedOption.layer - 8) * 0.29f), 0f), Quaternion.identity);
+        audiosource.PlayOneShot(wrongOption, 1.3f); // Play Soundeffect
         SpriteRenderer feedback_renderer = feedback.GetComponent<SpriteRenderer>();
         feedback_renderer.color = new Color(0.8f, 0.0f, 0.0f, 0f); // Make it BOMB RED
         StageHandler.NextStage(selectedOption.layer - 7);	// Usable layers start at 8
