@@ -13,14 +13,14 @@ public class Dialouge {
 			new Stage(-1, line, "I'm, sorry.",
 			// ========= Answers
 			"Hey.", 
-			"(Hang up.)",
+			null,
 			null,
 			null, 
 			// ========= Keys
-			"We need to talk.", 
-			"The call has ended.", 
-			//"", // WIN!
-			null,
+			"We need to talk.",
+            null,
+            //"", // WIN!
+            null,
             null));
 
         line = "The call has ended.";
@@ -160,7 +160,7 @@ public class Dialouge {
                 // ========= Keys
                 "Well, ain't that just amazing.",
                 "Yes, also very angry.",
-                "Don't. Do this. I demand answers.",
+                "I deserve answers.",
                 null));
 
         line = "Well, ain't that just amazing.";
@@ -177,7 +177,7 @@ public class Dialouge {
                 null,
                 null));
 
-        line = "Why should I believe anything you say now?";
+        line = "Why should I believe you now?";
         stages.Add(line,
             new Stage(1, line, "Shit...",
                 // ========= Answers
@@ -200,7 +200,7 @@ public class Dialouge {
                 null,
                 null,
                 // ========= Keys
-                "I'm feeling a lot. Confused, mostly.",
+                "I deserve answers.",
                 null,
                 null,
                 null));
