@@ -117,6 +117,7 @@ public class PlayerMove : MonoBehaviour {
 			phone_animator.applyRootMotion = true;
 			introstage++;
 		} else { // Hit an Option!
+            Debug.Log("Clang!");
             Instantiate(option_feedback, new Vector3(0f,0.22f - ((selectedOption.layer - 8) * 0.29f), 0f), Quaternion.identity);
 			StageHandler.NextStage (selectedOption.layer - 7);	// Usable layes start at 8
 		}

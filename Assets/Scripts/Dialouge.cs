@@ -61,7 +61,7 @@ public class Dialouge {
                 // ========= Keys
                 "No it hasn't.",
                 "It matters to me!",
-                "What? Do you think this is some kind of game?",
+                "What? Do you think this is a game?",
                 null));
 
         line = "No it hasn't.";
@@ -120,7 +120,7 @@ public class Dialouge {
                 null,
                 null));
 
-        line = "What? Do you think this is some kind of game?";
+        line = "What? Do you think this is a game?";
         stages.Add(line,
             new Stage(1, line, "Nothing has been more serious.",
                 // ========= Answers
@@ -144,7 +144,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "Don't tell me what I deserve.",
-                "What? Do you think this is some kind of game?",
+                "What? Do you think this is a game?",
                 null,
                 null));
 

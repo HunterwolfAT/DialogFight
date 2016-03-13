@@ -9,7 +9,7 @@ public class TextObjectHandle {
 	private string fullq, fullo1, fullo2, fullo3, fullo4, fulliv; // The full strings (given)
 	private int counter;
 	private bool doneq, done1, done2, done3, done4, doneiv = true;
-	public float timer = 0f, threshold = .1f, speed = 2f;
+	public float timer = 0f, threshold = .1f, speed = 3f;
 
 	// Use this for initialization
 	public void Init () {
