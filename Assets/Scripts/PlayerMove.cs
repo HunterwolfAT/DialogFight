@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour {
     public Sprite phone_end_sprite;
 	public TextMesh introtextmesh;
 
-    public AudioClip ConfirmOption, GetHit, Voice, PhoneVoice;
+    public AudioClip ConfirmOption, GetHit, Voice, PhoneVoice, Woosh;
 
 	private Rigidbody2D body;
     //private StageHandler stagehandler;
@@ -86,6 +86,7 @@ public class PlayerMove : MonoBehaviour {
 				selectedOption = coll.gameObject;
 				// Option to select
 				if (selectedOption.CompareTag ("Option")) {
+                    audiosource.PlayOneShot(Voice);
 					TextMesh textmesh = selectedOption.GetComponent<TextMesh> ();
 					textmesh.color = Color.yellow;
 				}
@@ -121,6 +122,7 @@ public class PlayerMove : MonoBehaviour {
 
 	private void EnterOption() {
         if (intro && selectedOption.tag == "Phone" && introstage == 4) { // Hit the phone in the intro
+            audiosource.PlayOneShot(PhoneVoice);
 			phone_spriterenderer.sprite = phone_call_sprite;
 			phone_animator.applyRootMotion = true;
 			introstage++;
@@ -128,7 +130,7 @@ public class PlayerMove : MonoBehaviour {
 
             // DIRTY HACK ALERT
             if (selectedOption.tag != "Phone")
-                audiosource.PlayOneShot(ConfirmOption, 1f); // Play SoundEffect
+                audiosource.PlayOneShot(ConfirmOption, 0.6f); // Play SoundEffect
             // DIRTY HACK ALERT OVER
 
             Instantiate(option_feedback, new Vector3(0f,0.22f - ((selectedOption.layer - 8) * 0.29f), 0f), Quaternion.identity);
@@ -145,7 +147,8 @@ public class PlayerMove : MonoBehaviour {
 			} else {
 				introfade = 0f;
 				introstage++;
-			}
+                audiosource.Play();
+            }
 			break;
 		case 2: // Fade the Phone in
 			if (introfade < 1f) {
@@ -166,12 +169,13 @@ public class PlayerMove : MonoBehaviour {
 			}
 			break;
 		case 5: // No 4! 4 is waiting for the phone to be answered. Moves the Phone to the bottom left corner
-			Vector3 target_phone_vector = new Vector3 (-2.981f, 0.635f, 0f);
+            audiosource.Stop();
+            Vector3 target_phone_vector = new Vector3 (-2.981f, 0.635f, 0f);
 			if (phone_spriterenderer.transform.position != target_phone_vector || introfade < 1f) {
 				phone_spriterenderer.transform.position = Vector3.MoveTowards (phone_spriterenderer.transform.position, target_phone_vector, 2f * Time.deltaTime);
 				introtextmesh.color = new Vector4 (1, 1, 1, 1 - introfade);
 				introfade += fadespeed * Time.deltaTime;
-			} else {
+			} else {   
 				introfade = 0f;
 				introstage++;
 			}
