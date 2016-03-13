@@ -109,7 +109,7 @@ public class Dialouge {
 
         line = "Okay. Here is your chance then.";
         stages.Add(line,
-            new Stage(0, line, "...",
+            new Stage(0, line, "",
                 // ========= Answers
                 null,
                 null,
@@ -572,7 +572,7 @@ public class Dialouge {
                 null,
                 null));
 
-        // ======================================== ACT 3
+        // *************************************************************** ACT 3
 
         line = "I.. I want to apologize.";
         stages.Add(line,
@@ -634,13 +634,29 @@ public class Dialouge {
         stages.Add(line,
             new Stage(1, line, "I'm still sorry, but that is not your business.",
                 // ========= Answers
-                null,
+                "I am about to.",
                 "Why does it matter to you.",
                 null,
                 null,
+                //"I did.",
+                //"I don't think I will.",
                 // ========= Keys
-                null,
+                "...I always liked how you were.",
                 "First you make me ask, then you get pissy.",
+                null,
+                null));
+
+        line = "...I always liked how you were.";
+        stages.Add(line,
+            new Stage(0, line, "I didn't.",
+                // ========= Answers
+                "I never belonged you to you though.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "First you make me ask...",
+                null,
                 null,
                 null));
 
@@ -676,13 +692,69 @@ public class Dialouge {
         stages.Add(line,
             new Stage(1, line, "Sure, make it about you.",
                 // ========= Answers
-                null,
+                "Nobody asked you to.",
                 "Look, I'm sorry. It's a touchy subject.",
                 null,
                 null,
                 // ========= Keys
-                null,
+                "I had to when you changed your body!",
                 "Okay. Damn.",
+                null,
+                null));
+
+        line = "I had to when you changed your body!";
+        stages.Add(line,
+            new Stage(0, line, "Please calm down.",
+                // ========= Answers
+                "Or, you could just carry on...",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "I am so frustrated, I'm vibrating.",
+                null,
+                null,
+                null));
+
+        line = "I am so frustrated, I'm vibrating.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "You make we want to scream!",
+                null,
+                null,
+                null));
+
+        line = "You make we want to scream!";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "I don't care any more! Go to hell!",
+                null,
+                null,
+                null));
+
+        line = "I don't care any more! Go to hell!";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "The call has ended.",
+                null,
                 null,
                 null));
 
@@ -700,7 +772,7 @@ public class Dialouge {
                 null,
                 null));
 
-        // =============================================== ACT 4
+        // *************************************************************** ACT 4
 
         line = "So, it has nothing to do with me?";
         stages.Add(line,
@@ -816,7 +888,7 @@ public class Dialouge {
 
         line = "Take care. And see you around.";
         stages.Add(line,
-            new Stage(0, line, "",
+            new Stage(0, line, "You too.",
                 // ========= Answers
                 null,
                 null,
