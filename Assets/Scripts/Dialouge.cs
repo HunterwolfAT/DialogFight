@@ -694,7 +694,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
 		        "I.. I want to apologize.",
-		        "I.. I want to apologize.",
+                "Are you really happier this way?",
                 null,
                 null));
 
@@ -846,13 +846,25 @@ public class Dialouge {
                 // ========= Answers
                 "I am about to.",
                 "Why does it matter to you.",
+                "I don't think I will.",
                 null,
-                null,
-                //"I did.",
-                //"I don't think I will.",
                 // ========= Keys
                 "...I always liked how you were.",
                 "First you make me ask...",
+                "Kinda glad about that.",
+                null));
+
+        line = "Kinda glad about that.";
+        stages.Add(line,
+            new Stage(1, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "...I always liked how you were.",
+                null,
                 null,
                 null));
 
@@ -860,7 +872,35 @@ public class Dialouge {
         stages.Add(line,
             new Stage(0, line, "I didn't.",
                 // ========= Answers
+                "It wasn't how I felt.",
                 "I never belonged to you though.",
+                "It's my body.",
+                null,
+                // ========= Keys
+                "You never tried hard to fit in.",
+                "First you make me ask...",
+                "Calm down. I was only saying.",
+                null));
+
+        line = "You never tried hard to fit in.";
+        stages.Add(line,
+            new Stage(0, line, "You still don't get it?",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                null,
+                null,
+                null,
+                null));
+        
+        line = "Calm down. I was only saying.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
                 null,
                 null,
                 null,
