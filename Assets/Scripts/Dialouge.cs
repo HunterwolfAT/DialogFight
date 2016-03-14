@@ -431,6 +431,20 @@ public class Dialouge {
                 "Why didn't you call? Or write then?",
                 null));
 
+        line = "The running away or your changes?";
+        stages.Add(line,
+            new Stage(0, line, "...",
+                // ========= Answers
+                "Both?",
+                "The former IS your fault.",
+                "I don't know.",
+                null,
+                // ========= Keys
+                "Are you sure you are not to blame?",
+                "(You hear more crying)",
+                "You don't know? That's just great.",
+                null));
+
         line = "(You hear more crying)";
         stages.Add(line,
             new Stage(1, line, "",
@@ -762,7 +776,7 @@ public class Dialouge {
         stages.Add(line,
             new Stage(0, line, "I didn't.",
                 // ========= Answers
-                "I never belonged you to you though.",
+                "I never belonged to you though.",
                 null,
                 null,
                 null,
