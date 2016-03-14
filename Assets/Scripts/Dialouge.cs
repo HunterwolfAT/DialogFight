@@ -704,7 +704,91 @@ public class Dialouge {
         stages.Add(line,
             new Stage(1, line, "Now we are on the same page.",
                 // ========= Answers
+                "Thank you.",
                 "I'm sorry too.",
+                "You don't have to.",
+                null,
+                // ========= Keys
+                "Still, doesn't excuse what you've done.",
+                "Are you really happier this way?",
+                "Are you really happier this way?",
+                null));
+
+        line = "Still, doesn't excuse what you've done.";
+        stages.Add(line,
+            new Stage(0, line, "Regretted it enough.",
+                // ========= Answers
+                "I don't think it was wrong.",
+                "I had to.",
+                "Yeah, you're right.",
+                null,
+                // ========= Keys
+                "I don't think you're being honest.",
+                "You HAD to leave me crying for days?",
+                "Are you really happier this way?",
+                null));
+
+        line = "You HAD to leave me crying for days?";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Oh, of course. That explains everything!",
+                null,
+                null,
+                null));
+
+        line = "I don't think you're being honest.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "That, or you're being really ignorant.",
+                null,
+                null,
+                null));
+
+        line = "That, or you're being really ignorant.";
+        stages.Add(line,
+            new Stage(0, line, "Probably.",
+                // ========= Answers
+                "What am I ignorant of?",
+                "I used to. It's been quite a while.",
+                null,
+                null,
+                // ========= Keys
+                "(You hear esasperated noises)",
+                "You sound really sure.",
+                null,
+                null));
+
+        line = "You sound really sure.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Okay. Let's say I believe you.",
+                null,
+                null,
+                null));
+
+        line = "Okay. Let's say I believe you.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
                 null,
                 null,
                 null,
