@@ -483,7 +483,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "Why didn't you call? Or write then?",
-                "(You hear esasperated noises)",
+                "(You hear exasperated noises)",
                 "I don't love you.",
                 null));
 
@@ -610,7 +610,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "*sigh* You are somebody else now anyway.",
-                "(You hear esasperated noises)",
+                "(You hear exasperated noises)",
                 "I... I guess.",
                 null));
 
@@ -628,7 +628,7 @@ public class Dialouge {
                 null,
                 null));
 
-        line = "(You hear esasperated noises)";
+        line = "(You hear exasperated noises)";
         stages.Add(line,
             new Stage(0, line, "",
                 // ========= Answers
@@ -765,7 +765,7 @@ public class Dialouge {
                 null,
                 null,
                 // ========= Keys
-                "(You hear esasperated noises)",
+                "(You hear exasperated noises)",
                 "You sound really sure.",
                 null,
                 null));
@@ -1070,12 +1070,97 @@ public class Dialouge {
         stages.Add(line,
             new Stage(1, line, "I'm sorry you had to think that.",
                 // ========= Answers
+                "It really is just on me.",
+                "Only so far that I hurt you.",
                 "Yeah. Don't worry.",
+                null,
+                // ========= Keys
+                "Yeah I got that.",
+                "I know you messed up.",
+                "I still liked you.",
+                null));
+
+        line = "Yeah I got that.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
                 null,
                 null,
                 null,
                 // ========= Keys
+                "I know you messed up.",
+                null,
+                null,
+                null));
+
+        line = "I know you messed up.";
+        stages.Add(line,
+            new Stage(0, line, "I know it too. I said I'm sorry.",
+                // ========= Answers
+                "Yeah.",
+                "Yes, but it was necessary. I'm sorry.",
+                "It led to realizing who I am.",
+                null,
+                // ========= Keys
                 "I still liked you.",
+                "I am the sorry one.",
+                "Isn't that amazing for you.",
+                null));
+        
+        line = "Isn't that amazing for you.";
+        stages.Add(line,
+            new Stage(0, line, "Don't push it.",
+                // ========= Answers
+                "(Hang up.)",
+                "Has your life not been better too?",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "The call has ended.",
+                "No, it hasn't. Thanks for asking.",
+                null,
+                null));
+
+        line = "No, it hasn't. Thanks for asking.";
+        stages.Add(line,
+            new Stage(0, line, "Shit, I'm sorry.",
+                // ========= Answers
+                "That sucks. I didn't want that.",
+                "If only you treated me better.",
+                "Sorry.",
+                null,
+                // ========= Keys
+                "I still liked you.",
+                "Get your head out of your ass!",
+                "I still liked you.",
+                null));
+
+        line = "Get your head out of your ass!";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "You won't blame your shit on me!",
+                null,
+                null,
+                null));
+
+        line = "You won't blame your shit on me!";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "I tried understanding. Fuck you.",
                 null,
                 null,
                 null));
@@ -1085,12 +1170,12 @@ public class Dialouge {
             new Stage(1, line, "I'm glad.",
                 // ========= Answers
                 "I still like you too.",
-                null,
+                "That's nice to hear.",
                 null,
                 null,
                 // ========= Keys
                 "...",
-                null,
+                "...",
                 null,
                 null));
 
@@ -1110,7 +1195,7 @@ public class Dialouge {
 
         line = "I don't know. This is weird.";
         stages.Add(line,
-            new Stage(0, line, "Awkward.",
+            new Stage(2, line, "Awkward.",
                 // ========= Answers
                 "I'm sorry.",
                 null,
@@ -1122,9 +1207,11 @@ public class Dialouge {
                 null,
                 null));
 
+    // ********************************************* END STRETCH
+
         line = "I am the sorry one.";
         stages.Add(line,
-            new Stage(0, line, "",
+            new Stage(1, line, "",
                 // ========= Answers
                 null,
                 null,
@@ -1182,7 +1269,7 @@ public class Dialouge {
         stages.Add(line,
             new Stage(0, line, "You too.",
                 // ========= Answers
-                null,
+                "(End call.)",
                 null,
                 null,
                 null,
