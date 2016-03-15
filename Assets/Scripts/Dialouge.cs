@@ -1116,7 +1116,6 @@ public class Dialouge {
                 "Has your life not been better too?",
                 null,
                 null,
-                null,
                 // ========= Keys
                 "The call has ended.",
                 "No, it hasn't. Thanks for asking.",
