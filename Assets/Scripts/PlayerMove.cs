@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
 	public float speed = 1.3f;
-	private bool intro = true;
+	private bool intro = false;
 	private int introstage = 1;
 	private SpriteRenderer heart_spriterenderer;
 	public SpriteRenderer phone_spriterenderer;
