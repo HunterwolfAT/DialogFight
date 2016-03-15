@@ -13,7 +13,7 @@ public static class StageHandler {
 
 	public static void Init(TextMesh itext, AudioSource audiosource, AudioClip phonevoice, AudioClip voice) {
 		dialouge = new Dialouge ();
-		currentStage = dialouge.stages ["Start"];
+		currentStage = dialouge.stages ["Take care. And see you around."];
 
 		objecthandler.Init (audiosource, phonevoice, voice);
 		UpdateText ();

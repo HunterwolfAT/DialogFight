@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BulletHell : MonoBehaviour {
 
-	public static int gamestate = 4, oldgamestate = 0; // Do Nothing at first
+	public static int gamestate = 0, oldgamestate = 0; // Do Nothing at first
     public Rigidbody2D bullet;
     public Rigidbody2D bomb;
     public float speedboost = 5f;
