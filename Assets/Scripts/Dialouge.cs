@@ -140,7 +140,7 @@ public class Dialouge {
             new Stage(1, line, "We both do.",
                 // ========= Answers
                 "Yes you do.",
-                "Too bad.",
+                "What if I don't feel like talking.",
                 null,
                 null,
                 // ========= Keys
@@ -291,6 +291,76 @@ public class Dialouge {
                 "No.",
                 null));
 
+        line = "We have been together for years!";
+        stages.Add(line,
+            new Stage(0, line, "It felt too long.",
+                // ========= Answers
+                "I don't regret that.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Don't I deserve... something?",
+                null,
+                null,
+                null));
+
+        line = "Don't I deserve... something?";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "(You hear crying)",
+                null,
+                null,
+                null));
+
+        line = "No.";
+        stages.Add(line,
+            new Stage(0, line, "You're right.",
+                // ========= Answers
+                "Aren't you proud? Of yourself? Of me?",
+                "Yes.",
+                null,
+                null,
+                // ========= Keys
+                "(You hear nothing.)",
+                "Why would you say that? What did I do?",
+                null,
+                null));
+
+        line = "(You hear nothing.)";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "The call has ended.",
+                null,
+                null,
+                null));
+
+        line = "Why would you say that? What did I do?";
+        stages.Add(line,
+            new Stage(0, line, "You did nothing. I am lying.",
+                // ========= Answers
+                "You made me want to be somebody else.",
+                "That's not really true.",
+                "I didn't think you loved me.",
+                null,
+                // ========= Keys
+                "Then who was I in a relationship with?",
+                "Then what is true?",
+                "Of course I fucking did.",
+                null));
+
         line = "Then who was I in a relationship with?";
         stages.Add(line,
             new Stage(3, line, "I'm still here.",
@@ -301,7 +371,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "(You hear crying)",
-                "I had forgiven before. Now I'm not sure.",
+                "I had forgiven you. Now I'm not sure.",
                 "(You hear crying)",
                 null));
 
@@ -319,6 +389,20 @@ public class Dialouge {
                 null,
                 null));
 
+        line = "I had forgiven you. Now I'm not sure.";
+        stages.Add(line,
+            new Stage(0, line, "Maybe I don't deserve it.",
+                // ========= Answers
+                "We weren't together for that long...",
+                "I still love you.",
+                null,
+                null,
+                // ========= Keys
+                "We have been together for years!",
+                "I don't love you.",
+                null,
+                null));
+
         line = "You never truly loved me, didn't you?";
         stages.Add(line,
             new Stage(3, line, "I did.",
@@ -331,20 +415,34 @@ public class Dialouge {
                 "Then what is true?",
                 "(You hear more crying)",
                 "Don't avoid the question!",
-                "Oh that's just great. Good answer."));
+                "You don't know? That's just great."));
 
         line = "Then what is true?";
         stages.Add(line,
-            new Stage(1, line, "",
+            new Stage(1, line, "Again, I'm sorry.",
                 // ========= Answers
-                null,
-                null,
-                null,
+                "What I did is nobody's fault.",
+                "I have always loved you.",
+                "You are still important to me.",
                 null,
                 // ========= Keys
+                "The running away or your changes?",
+                "I don't love you.",
+                "Why didn't you call? Or write then?",
+                null));
+
+        line = "The running away or your changes?";
+        stages.Add(line,
+            new Stage(0, line, "...",
+                // ========= Answers
+                "Both?",
+                "The former IS your fault.",
+                "I don't know.",
                 null,
-                null,
-                null,
+                // ========= Keys
+                "Are you sure you are not to blame?",
+                "(You hear more crying)",
+                "You don't know? That's just great.",
                 null));
 
         line = "(You hear more crying)";
@@ -356,7 +454,7 @@ public class Dialouge {
                 null,
                 null,
                 // ========= Keys
-                null,
+                "Why would you say that? What did I do?",
                 null,
                 null,
                 null));
@@ -385,12 +483,12 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "Why didn't you call? Or write then?",
-                "(You hear esasperated noises)",
+                "(You hear exasperated noises)",
                 "I don't love you.",
                 null));
 
 
-        line = "Oh that's just great. Good answer.";
+        line = "You don't know? That's just great.";
         stages.Add(line,
             new Stage(1, line, "",
                 // ========= Answers
@@ -399,7 +497,35 @@ public class Dialouge {
                 null,
                 null,
                 // ========= Keys
+                "The fine m..r...s... argh! Doesn't know!",
                 null,
+                null,
+                null));
+
+        line = "The fine m..r...s... argh! Doesn't know!";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Call me if one of them knows something!",
+                null,
+                null,
+                null));
+
+        line = "Call me if one of them knows something!";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "The call has ended.",
                 null,
                 null,
                 null));
@@ -484,11 +610,11 @@ public class Dialouge {
                 null,
                 // ========= Keys
                 "*sigh* You are somebody else now anyway.",
-                "(You hear esasperated noises)",
+                "(You hear exasperated noises)",
                 "I... I guess.",
                 null));
 
-        line = "I... I guess";
+        line = "I... I guess.";
         stages.Add(line,
             new Stage(0, line, "",
                 // ========= Answers
@@ -502,7 +628,7 @@ public class Dialouge {
                 null,
                 null));
 
-        line = "(You hear esasperated noises)";
+        line = "(You hear exasperated noises)";
         stages.Add(line,
             new Stage(0, line, "",
                 // ========= Answers
@@ -541,8 +667,8 @@ public class Dialouge {
                 // ========= Keys
                 "...I don't... I'm sorry.",
                 "That's not what I-- don't toy with me.",
-		null,
-		null));
+                "That's not what I-- don't toy with me.",
+		        null));
 
         line = "That's not what I-- don't toy with me.";
         stages.Add(line,
@@ -568,7 +694,7 @@ public class Dialouge {
                 null,
                 // ========= Keys
 		        "I.. I want to apologize.",
-		        "I.. I want to apologize.",
+                "Are you really happier this way?",
                 null,
                 null));
 
@@ -578,7 +704,91 @@ public class Dialouge {
         stages.Add(line,
             new Stage(1, line, "Now we are on the same page.",
                 // ========= Answers
+                "Thank you.",
                 "I'm sorry too.",
+                "You don't have to.",
+                null,
+                // ========= Keys
+                "Still, doesn't excuse what you've done.",
+                "Are you really happier this way?",
+                "Are you really happier this way?",
+                null));
+
+        line = "Still, doesn't excuse what you've done.";
+        stages.Add(line,
+            new Stage(0, line, "Regretted it enough.",
+                // ========= Answers
+                "I don't think it was wrong.",
+                "I had to.",
+                "Yeah, you're right.",
+                null,
+                // ========= Keys
+                "I don't think you're being honest.",
+                "You HAD to leave me crying for days?",
+                "Are you really happier this way?",
+                null));
+
+        line = "You HAD to leave me crying for days?";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Oh, of course. That explains everything!",
+                null,
+                null,
+                null));
+
+        line = "I don't think you're being honest.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "That, or you're being really ignorant.",
+                null,
+                null,
+                null));
+
+        line = "That, or you're being really ignorant.";
+        stages.Add(line,
+            new Stage(0, line, "Probably.",
+                // ========= Answers
+                "What am I ignorant of?",
+                "I used to. It's been quite a while.",
+                null,
+                null,
+                // ========= Keys
+                "(You hear exasperated noises)",
+                "You sound really sure.",
+                null,
+                null));
+
+        line = "You sound really sure.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "Okay. Let's say I believe you.",
+                null,
+                null,
+                null));
+
+        line = "Okay. Let's say I believe you.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
                 null,
                 null,
                 null,
@@ -592,13 +802,13 @@ public class Dialouge {
         stages.Add(line,
             new Stage(1, line, "The time with you was great too.",
                 // ========= Answers
-                "I'm better. I needed it.",
-                null,
+                "I needed it.",
+                "I really am.",
                 null,
                 null,
                 // ========= Keys
                 "That's good, I guess.",
-                null,
+                "That's good, I guess.",
                 null,
                 null));
 
@@ -621,28 +831,82 @@ public class Dialouge {
             new Stage(1, line, "Oh god, no.",
                 // ========= Answers
                 "What do you mean?",
-                null,
+                "I feel whole now.",
                 null,
                 null,
                 // ========= Keys
                 "You know. Did you get surgery?",
-                null,
+                "You weren't before?",
                 null,
                 null));
 
         line = "You know. Did you get surgery?";
         stages.Add(line,
-            new Stage(1, line, "I'm still sorry, but that is not your business.",
+            new Stage(1, line, "I'm still sorry, but this is none of your business.",
                 // ========= Answers
                 "I am about to.",
                 "Why does it matter to you.",
+                "I don't think I will.",
                 null,
-                null,
-                //"I did.",
-                //"I don't think I will.",
                 // ========= Keys
                 "...I always liked how you were.",
                 "First you make me ask...",
+                "Kinda glad about that.",
+                null));
+
+        line = "You weren't before?";
+        stages.Add(line,
+            new Stage(0, line, "It's hard to describe.",
+                // ========= Answers
+                "No. And I didn't really know why.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "And you're really sure you do now?",
+                null,
+                null,
+                null));
+
+        line = "And you're really sure you do now?";
+        stages.Add(line,
+            new Stage(0, line, "Why don't you believe me?",
+                // ========= Answers
+                "Been nothing more sure of in my life.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "It makes sense I guess.",
+                null,
+                null,
+                null));
+
+        line = "It makes sense I guess.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "You never tried hard to fit in.",
+                null,
+                null,
+                null));
+
+        line = "Kinda glad about that.";
+        stages.Add(line,
+            new Stage(1, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "...I always liked how you were.",
+                null,
                 null,
                 null));
 
@@ -650,7 +914,35 @@ public class Dialouge {
         stages.Add(line,
             new Stage(0, line, "I didn't.",
                 // ========= Answers
-                "I never belonged you to you though.",
+                "It wasn't how I felt.",
+                "I never belonged to you though.",
+                "It's my body.",
+                null,
+                // ========= Keys
+                "You never tried hard to fit in.",
+                "First you make me ask...",
+                "Calm down. I was only saying.",
+                null));
+
+        line = "You never tried hard to fit in.";
+        stages.Add(line,
+            new Stage(0, line, "You still don't get it?",
+                // ========= Answers
+                "You don't have to concern yourself with that.",
+                "I'm right now. Nothing to do with fitting in.",
+                null,
+                null,
+                // ========= Keys
+                "I had to when you changed your body!",
+                "Urgh, I don't want to deal with this.",
+                null,
+                null));
+        
+        line = "Calm down. I was only saying.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
                 null,
                 null,
                 null,
@@ -707,12 +999,12 @@ public class Dialouge {
             new Stage(0, line, "Please calm down.",
                 // ========= Answers
                 "Or, you could just carry on...",
-                null,
+                "You don't have to do anything!",
                 null,
                 null,
                 // ========= Keys
                 "I am so frustrated, I'm vibrating.",
-                null,
+                "So, it has nothing to do with me?",
                 null,
                 null));
 
@@ -725,12 +1017,12 @@ public class Dialouge {
                 null,
                 null,
                 // ========= Keys
-                "You make we want to scream!",
+                "You make me want to scream!",
                 null,
                 null,
                 null));
 
-        line = "You make we want to scream!";
+        line = "You make me want to scream!";
         stages.Add(line,
             new Stage(0, line, "",
                 // ========= Answers
@@ -778,12 +1070,96 @@ public class Dialouge {
         stages.Add(line,
             new Stage(1, line, "I'm sorry you had to think that.",
                 // ========= Answers
+                "It really is just on me.",
+                "Only so far that I hurt you.",
                 "Yeah. Don't worry.",
+                null,
+                // ========= Keys
+                "Yeah I got that.",
+                "I know you messed up.",
+                "I still liked you.",
+                null));
+
+        line = "Yeah I got that.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
                 null,
                 null,
                 null,
                 // ========= Keys
+                "I know you messed up.",
+                null,
+                null,
+                null));
+
+        line = "I know you messed up.";
+        stages.Add(line,
+            new Stage(0, line, "I know it too. I said I'm sorry.",
+                // ========= Answers
+                "Yeah.",
+                "Yes, but it was necessary. I'm sorry.",
+                "It led to realizing who I am.",
+                null,
+                // ========= Keys
                 "I still liked you.",
+                "I am the sorry one.",
+                "Isn't that amazing for you.",
+                null));
+        
+        line = "Isn't that amazing for you.";
+        stages.Add(line,
+            new Stage(0, line, "Don't push it.",
+                // ========= Answers
+                "(Hang up.)",
+                "Has your life not been better too?",
+                null,
+                null,
+                // ========= Keys
+                "The call has ended.",
+                "No, it hasn't. Thanks for asking.",
+                null,
+                null));
+
+        line = "No, it hasn't. Thanks for asking.";
+        stages.Add(line,
+            new Stage(0, line, "Shit, I'm sorry.",
+                // ========= Answers
+                "That sucks. I didn't want that.",
+                "If only you treated me better.",
+                "Sorry.",
+                null,
+                // ========= Keys
+                "I still liked you.",
+                "Get your head out of your ass!",
+                "I still liked you.",
+                null));
+
+        line = "Get your head out of your ass!";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "You won't blame your shit on me!",
+                null,
+                null,
+                null));
+
+        line = "You won't blame your shit on me!";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "I tried understanding. Fuck you.",
                 null,
                 null,
                 null));
@@ -793,12 +1169,12 @@ public class Dialouge {
             new Stage(1, line, "I'm glad.",
                 // ========= Answers
                 "I still like you too.",
-                null,
+                "That's nice to hear.",
                 null,
                 null,
                 // ========= Keys
                 "...",
-                null,
+                "...",
                 null,
                 null));
 
@@ -818,7 +1194,7 @@ public class Dialouge {
 
         line = "I don't know. This is weird.";
         stages.Add(line,
-            new Stage(0, line, "Awkward.",
+            new Stage(2, line, "Awkward.",
                 // ========= Answers
                 "I'm sorry.",
                 null,
@@ -830,9 +1206,11 @@ public class Dialouge {
                 null,
                 null));
 
+    // ********************************************* END STRETCH
+
         line = "I am the sorry one.";
         stages.Add(line,
-            new Stage(0, line, "",
+            new Stage(1, line, "",
                 // ========= Answers
                 null,
                 null,
@@ -890,7 +1268,7 @@ public class Dialouge {
         stages.Add(line,
             new Stage(0, line, "You too.",
                 // ========= Answers
-                null,
+                "(End call.)",
                 null,
                 null,
                 null,
