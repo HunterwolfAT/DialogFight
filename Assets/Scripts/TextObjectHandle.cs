@@ -75,6 +75,11 @@ public class TextObjectHandle {
             q.fontStyle = FontStyle.Normal;
         }
 
+        if (fo1 == null)
+        {
+            fulliv = "Press to Advance";
+        }
+
         Debug.Log ("Text updated! New q is " + fullq);
 	}
 
