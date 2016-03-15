@@ -938,8 +938,8 @@ public class Dialouge {
         stages.Add(line,
             new Stage(5, line, "You still don't get it?",
                 // ========= Answers
-                "You don't have to concern yourself with that.",
-                "I'm right now. Nothing to do with fitting in.",
+                "You don't have to worry about that.",
+                "I'm better. Nothing to do with fitting in.",
                 null,
                 null,
                 // ========= Keys

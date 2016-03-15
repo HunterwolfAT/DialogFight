@@ -175,7 +175,7 @@ public class PlayerMove : MonoBehaviour {
 			if (phone_spriterenderer.transform.position != target_phone_vector || introfade < 1f) {
 				phone_spriterenderer.transform.position = Vector3.MoveTowards (phone_spriterenderer.transform.position, target_phone_vector, 2f * Time.deltaTime);
 				introtextmesh.color = new Vector4 (1, 1, 1, 1 - introfade);
-                CCtextmesh.color = new Vector4(1, 1, 1, 1  - introfade);
+                CCtextmesh.color = new Vector4(1, 1, 1, 0.3f  - introfade);
 				introfade += fadespeed * Time.deltaTime;
 			} else {   
 				introfade = 0f;
