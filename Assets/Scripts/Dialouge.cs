@@ -802,13 +802,13 @@ public class Dialouge {
         stages.Add(line,
             new Stage(1, line, "The time with you was great too.",
                 // ========= Answers
-                "I'm better. I needed it.",
-                null,
+                "I needed it.",
+                "I really am.",
                 null,
                 null,
                 // ========= Keys
                 "That's good, I guess.",
-                null,
+                "That's good, I guess.",
                 null,
                 null));
 
@@ -928,13 +928,13 @@ public class Dialouge {
         stages.Add(line,
             new Stage(0, line, "You still don't get it?",
                 // ========= Answers
+                "You don't have to concern yourself with that.",
                 "I'm right now. Nothing to do with fitting in.",
                 null,
                 null,
-                null,
                 // ========= Keys
+                "I had to when you changed your body!",
                 "Urgh, I don't want to deal with this.",
-                null,
                 null,
                 null));
         
@@ -999,12 +999,12 @@ public class Dialouge {
             new Stage(0, line, "Please calm down.",
                 // ========= Answers
                 "Or, you could just carry on...",
-                null,
+                "You don't have to do anything!",
                 null,
                 null,
                 // ========= Keys
                 "I am so frustrated, I'm vibrating.",
-                null,
+                "So, it has nothing to do with me?",
                 null,
                 null));
 
