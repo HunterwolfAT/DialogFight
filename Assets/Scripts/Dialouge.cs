@@ -831,12 +831,12 @@ public class Dialouge {
             new Stage(1, line, "Oh god, no.",
                 // ========= Answers
                 "What do you mean?",
-                null,
+                "I feel whole now.",
                 null,
                 null,
                 // ========= Keys
                 "You know. Did you get surgery?",
-                null,
+                "You weren't before?",
                 null,
                 null));
 
@@ -852,6 +852,48 @@ public class Dialouge {
                 "...I always liked how you were.",
                 "First you make me ask...",
                 "Kinda glad about that.",
+                null));
+
+        line = "You weren't before?";
+        stages.Add(line,
+            new Stage(0, line, "It's hard to describe.",
+                // ========= Answers
+                "No. And I didn't really know why.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "And you're really sure you do now?",
+                null,
+                null,
+                null));
+
+        line = "And you're really sure you do now?";
+        stages.Add(line,
+            new Stage(0, line, "Why don't you believe me?",
+                // ========= Answers
+                "Been nothing more sure of in my life.",
+                null,
+                null,
+                null,
+                // ========= Keys
+                "It makes sense I guess.",
+                null,
+                null,
+                null));
+
+        line = "It makes sense I guess.";
+        stages.Add(line,
+            new Stage(0, line, "",
+                // ========= Answers
+                null,
+                null,
+                null,
+                null,
+                // ========= Keys
+                "You never tried hard to fit in.",
+                null,
+                null,
                 null));
 
         line = "Kinda glad about that.";
@@ -886,12 +928,12 @@ public class Dialouge {
         stages.Add(line,
             new Stage(0, line, "You still don't get it?",
                 // ========= Answers
-                null,
+                "I'm right now. Nothing to do with fitting in.",
                 null,
                 null,
                 null,
                 // ========= Keys
-                null,
+                "Urgh, I don't want to deal with this.",
                 null,
                 null,
                 null));
