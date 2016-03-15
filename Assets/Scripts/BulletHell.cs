@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BulletHell : MonoBehaviour {
 
-	public static int gamestate = 2, oldgamestate = 0; // Do Nothing at first
+	public static int gamestate = 4, oldgamestate = 0; // Do Nothing at first
     public Rigidbody2D bullet;
     public Rigidbody2D bomb;
     public float speedboost = 5f;
@@ -31,14 +31,14 @@ public class BulletHell : MonoBehaviour {
 			// Do nothing
 			break;
 		case 1:     // Basic, Tutorial Bullet Spray
-			if (timer > 0.5f)
+			if (timer > 0.2f)
                 {
                     newBullet();
 				    timer = 0f;
 			    }   
 			break;
        case 2: // Medium Bullet Spray
-            if (timer > 0.2f)
+            if (timer > 0.1f)
                 {
                     newBullet();
                     timer = 0f;
@@ -46,7 +46,7 @@ public class BulletHell : MonoBehaviour {
             break;
        case 3: // Medium Bullet Spray with Low Bombs (Tutorial)
             // The BULLET part
-            if (timer > 0.2f)
+            if (timer > 0.1f)
                 {
                     newBullet();
                     timer = 0f;
@@ -58,7 +58,51 @@ public class BulletHell : MonoBehaviour {
                     timer2 = 0f;
                 }
             break;
-		default:
+      case 4: // Heavy Bullet Spry
+            if (timer > 0.05f)
+                {
+                    newBullet();
+                    timer = 0f;
+                }
+            if (timer2 > 0.2f)
+                {
+                    newBullet(1);
+                    timer2 = 0f;
+                }
+            break;
+        case 5: // Medium Bullet Spray with Fast Bombs (Normal)
+                // The BULLET part
+            if (timer > 0.1f)
+            {
+                newBullet();
+                timer = 0f;
+            }
+            // BOMBS Part
+            if (timer2 > 6f)
+            {
+                newBomb(4f);
+                timer2 = 0f;
+            }
+            break;
+            case 6: // Heavy Bullet Spray with (slow) Bombs
+            if (timer > 0.05f)
+            {
+                newBullet();
+                timer = 0f;
+            }
+            if (timer2 > 0.2f)
+            {
+                newBullet(1);
+                timer2 = 0f;
+            }
+            // BOMBS Part
+            if (timer2 > 6f)
+            {
+                newBomb(8f);
+                timer2 = 0f;
+            }   
+            break;
+            default:
 			Debug.Log ("Gamestate " + gamestate + " is not defined!");
 			break;
 		}
@@ -68,11 +112,11 @@ public class BulletHell : MonoBehaviour {
         timer3 += 1f * Time.deltaTime;
     }
 
-    private void newBullet()
+    private void newBullet(int offset = 0)
     {
-        Quaternion newrotation = spawn.transform.rotation * Quaternion.Euler(0, 0, -90 + -1000f * angleTimer);
+        Quaternion newrotation = spawn.transform.rotation * Quaternion.Euler(0, 0, -75 + (-1000f / (offset+1)) * angleTimer);
 
-        if (-90 + -1000f * angleTimer < -180)
+        if (-75 + (-1000f / (offset+1)) * angleTimer < -160)
         {   // Limit the bullets to sensible range
             angleTimer = 0f;
         }

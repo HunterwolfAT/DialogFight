@@ -98,7 +98,7 @@ public class PlayerMove : MonoBehaviour {
 			transform.position = new Vector3 (transform.position.x + Random.Range(0.2f, 0.8f), transform.position.y - Random.Range(0.2f, 0.8f), 0);
 
             // Play SoundEffect
-            audiosource.PlayOneShot(GetHit, 1f);
+            audiosource.PlayOneShot(GetHit, 0.6f);
 
 			// Check if player is out of bounds
 			if (transform.position.y < -0.6) {
