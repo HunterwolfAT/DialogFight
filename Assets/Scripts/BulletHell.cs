@@ -7,7 +7,7 @@ public class BulletHell : MonoBehaviour {
     public Rigidbody2D bullet;
     public Rigidbody2D bomb;
     public float speedboost = 5f;
-	private float timer = 0f, timer2 = 0f, timer3 = 0f, angleTimer = 0f;
+	private float timer = 0f, timer2 = 0f, timer3 = 0f, angleTimer = 0f, angleTimer2 = 0f;
 	private GameObject spawn;
 
 	// Use this for initialization
@@ -54,22 +54,18 @@ public class BulletHell : MonoBehaviour {
             // BOMBS Part
             if (timer2 > 6f)
                 {
-                    newBomb(8f);
+                    newBomb(13f);
                     timer2 = 0f;
                 }
             break;
       case 4: // Heavy Bullet Spry
             if (timer > 0.05f)
-                {
-                    newBullet();
-                    timer = 0f;
-                }
-            if (timer2 > 0.2f)
-                {
-                    newBullet(1);
-                    timer2 = 0f;
-                }
-            break;
+            {
+                newBullet(0,1);
+                newBullet(1, 0);
+                timer = 0f;
+            }
+                break;
         case 5: // Medium Bullet Spray with Fast Bombs (Normal)
                 // The BULLET part
             if (timer > 0.1f)
@@ -80,11 +76,11 @@ public class BulletHell : MonoBehaviour {
             // BOMBS Part
             if (timer2 > 6f)
             {
-                newBomb(4f);
+                newBomb(8f);
                 timer2 = 0f;
             }
             break;
-            case 6: // Heavy Bullet Spray with (slow) Bombs
+       case 6: // Heavy Bullet Spray with (slow) Bombs
             if (timer > 0.05f)
             {
                 newBullet();
@@ -96,13 +92,13 @@ public class BulletHell : MonoBehaviour {
                 timer2 = 0f;
             }
             // BOMBS Part
-            if (timer2 > 6f)
+            if (timer3 > 6f)
             {
-                newBomb(8f);
-                timer2 = 0f;
+                newBomb(13f);
+                timer3 = 0f;
             }   
             break;
-            default:
+        default:
 			Debug.Log ("Gamestate " + gamestate + " is not defined!");
 			break;
 		}
@@ -112,15 +108,29 @@ public class BulletHell : MonoBehaviour {
         timer3 += 1f * Time.deltaTime;
     }
 
-    private void newBullet(int offset = 0)
+    private void newBullet(int offset = 0, int mode = 0)
     {
-        Quaternion newrotation = spawn.transform.rotation * Quaternion.Euler(0, 0, -75 + (-1000f / (offset+1)) * angleTimer);
+        Quaternion newrotation;
+        
+        newrotation = spawn.transform.rotation * Quaternion.Euler(0, 0, -75 + (-1000f / (offset+1)) * angleTimer);
+
+        if (mode == 1)
+            newrotation = spawn.transform.rotation * Quaternion.Euler(0, 0, -75 + (-1000f / (offset + 1)) * angleTimer2);
 
         if (-75 + (-1000f / (offset+1)) * angleTimer < -160)
         {   // Limit the bullets to sensible range
-            angleTimer = 0f;
+                angleTimer = 0f;
         }
-        angleTimer += Time.deltaTime;
+
+        if (-75 + (-1000f / (offset + 1)) * angleTimer2 < -160)
+        {   // Limit the bullets to sensible range
+            angleTimer2 += 160f;
+        }
+
+        if (mode == 0)
+            angleTimer += Time.deltaTime;
+        else if (mode == 1)
+            angleTimer2 += Time.deltaTime;
 
         Instantiate(bullet, spawn.transform.position, newrotation);
     }
