@@ -29,7 +29,7 @@ public class Dialouge {
 			// ========= Keys
 			"We need to talk.",
             null,
-            //"", // WIN!
+            //"",
             null,
             null));
 
@@ -939,7 +939,7 @@ public class Dialouge {
             new Stage(5, line, "You still don't get it?",
                 // ========= Answers
                 "You don't have to worry about that.",
-                "I'm better. Nothing to do with fitting in.",
+                "I'm better. Don't care about fitting in.",
                 null,
                 null,
                 // ========= Keys

@@ -171,5 +171,6 @@ public class TextObjectHandle {
         o3.text = "";
         o4.text = "";
         iv.text = "";
+        fulliv = fullo1 = fullo2 = fullo3 = fullo4 = "";
     }
 }

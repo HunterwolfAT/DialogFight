@@ -31,29 +31,29 @@ public static class StageHandler {
 		case 1:
 			if (currentStage.key1 != null) {
 				currentStage = dialouge.stages [currentStage.key1];
-                CheckFailState();
 				UpdateText ();
+                CheckFailState();
 			}
 			break;
 		case 2:
 			if (currentStage.key2 != null) {
 				currentStage = dialouge.stages [currentStage.key2];
-                CheckFailState();
                 UpdateText ();
+                CheckFailState();
 			}
 			break;
 		case 3:
 			if (currentStage.key3 != null) {
 				currentStage = dialouge.stages [currentStage.key3];
-                CheckFailState();
                 UpdateText ();
+                CheckFailState();
 			}
 			break;
 		case 4:
 			if (currentStage.key4 != null) {
 				currentStage = dialouge.stages [currentStage.key4];
-                CheckFailState();
                 UpdateText ();
+                CheckFailState();
 			}
 			break;
 		}
